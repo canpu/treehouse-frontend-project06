@@ -1,0 +1,62 @@
+.slide-up {
+  transform: translateY(-100%);
+}
+
+#overlay {
+  transition: transform 0.5s ease-out;
+  z-index: 10;
+}
+
+.btn__reset {
+  cursor: pointer;
+  transition-property: color, box-shadow;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+}
+
+.btn__reset:hover {
+  color: rgb(90, 177, 100);
+}
+
+.btn__reset:active {
+  box-shadow: 0 0 0 2px purple;
+}
+
+.letter {
+  transition: transform 0.5s ease-out,
+              background-color 0.5s ease-out;
+  margin: 3px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#phrase li:not([class^="letter"]) {
+  width: 25px;
+}
+
+.show {
+  transform: rotate(360deg);
+  transform-origin: center;
+}
+
+.hint {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#qwerty button {
+  transition: background-color 0.1s linear;
+}
+
+#qwerty button:not([class^="chosen"]):hover {
+  background-color: lightgrey;
+}
+
+#qwerty button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px purple;
+}
