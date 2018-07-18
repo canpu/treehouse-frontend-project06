@@ -1,7 +1,7 @@
 # treehouse-frontend-project06
 TreeHouse FrontEnd Project 6 - Game Show App
 
-[Click here] to view the demo.
+[Click here](https://canpu.github.io/treehouse-frontend-project06) to view the demo.
 
 ![](images/project-06.gif)
 
