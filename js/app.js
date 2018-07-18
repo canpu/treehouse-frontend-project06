@@ -9,7 +9,7 @@ const phrases = [
   "it is no use going back to yesterday",
   "hardship prepares an ordinary person for an extraordinary destiny",
   "a bird is safe in its nest",
-  "All I know is that I do not know anything",
+  "all I know is that I do not know anything",
   "it is never too late"
 ];
 
@@ -18,9 +18,6 @@ const qwerty = document.getElementById("qwerty");
 const phrase = document.getElementById("phrase");
 const phraseCharList = phrase.getElementsByTagName("ul")[0];
 const startBtn = document.getElementsByClassName("btn__reset")[0];
-const resetBtn = document.createElement("button");
-resetBtn.textContent = "Reset";
-resetBtn.className = "btn__reset";
 const overlay = document.getElementById("overlay");
 const lifeItem = document.getElementsByClassName("tries");
 const hint = document.createElement("p");
@@ -30,13 +27,9 @@ overlay.appendChild(hint);
 var missed = 0;
 var numMatchedLetters = 0;
 var answer;
-resetPhrase();
 
-function resetPhrase() {
+function reset() {
   answer = getRandomPhraseArray(phrases);
-}
-
-function resetGame() {
   missed = 0;
   numMatchedLetters = 0;
   addPhraseToDisplay(answer);
@@ -45,6 +38,7 @@ function resetGame() {
   for (let i = 0; i < buttons.length; ++i) {
     buttons[i].classList.remove("chosen");
     buttons[i].removeAttribute("disabled");
+    buttons[i].style.cursor = "pointer";
   }
 }
 
@@ -68,12 +62,7 @@ function addPhraseToDisplay(arr) {
 /* Overlay */
 startBtn.addEventListener("click", (event) => {
   overlay.className += " slide-up";
-  resetGame();
-});
-
-resetBtn.addEventListener("click", (event) => {
-  resetPhrase();
-  hint.textContent = "The phrase has been reset, now try to solve it!"
+  reset();
 });
 
 /* Game */
@@ -101,6 +90,7 @@ qwerty.addEventListener("click", (event) => {
     letterFound = checkLetter(button);
     button.setAttribute("disabled", "disabled");
     button.setAttribute("class", "chosen");
+    button.style.cursor = "default";
     if (letterFound === null) {
       missed += 1;
     }
@@ -112,16 +102,14 @@ qwerty.addEventListener("click", (event) => {
 /* Status Checking */
 function checkWin() {
   if (missed >= maxAttempts) {
-    overlay.classList.remove("slide-up");
     overlay.setAttribute("class", "lose");
-    hint.textContent = "You lose. Try again!"
-    overlay.appendChild(resetBtn);
+    hint.textContent = "You lose. Try again!";
+    startBtn.textContent = "Reset and Restart";
   } else {
     if (numMatchedLetters >= phraseCharList.getElementsByClassName("letter").length) {
-      overlay.classList.remove("slide-up");
       overlay.setAttribute("class", "win");
-      hint.textContent = "You win!"
-      overlay.appendChild(resetBtn);
+      hint.textContent = "You win!";
+      startBtn.textContent = "Reset and Restart";
     }
   }
 }
