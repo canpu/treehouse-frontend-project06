@@ -7,9 +7,9 @@ const phrases = [
   "the only thing we need to fear is fear itself",
   "life is short and focus on what really matters",
   "it is no use going back to yesterday",
-  "hardship prepares an ordinary person",
+  "hardship prepares an excellent person",
   "a bird is safe in its nest",
-  "all I know is that I do not know anything",
+  "I know I do not know anything",
   "it is never too late"
 ];
 
