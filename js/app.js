@@ -3,11 +3,11 @@ const maxAttempts = 5;
 const phrases = [
   "be the reason someone smiles",
   "make improvements instead of execuses",
-  "playing wheel of success is such an enjoyable thing",
+  "playing wheel of success is enjoyable",
   "the only thing we need to fear is fear itself",
   "life is short and focus on what really matters",
   "it is no use going back to yesterday",
-  "hardship prepares an ordinary person for an extraordinary destiny",
+  "hardship prepares an ordinary person",
   "a bird is safe in its nest",
   "all I know is that I do not know anything",
   "it is never too late"
